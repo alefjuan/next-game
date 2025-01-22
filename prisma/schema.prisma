@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lists     List[]
+}
+
+model Game {
+  id          Int          @id @default(autoincrement())
+  title       String
+  platform    String
+  genre       String
+  releaseYear Int
+  developer   String
+  description String?
+  coverImage  String?
+  lists       ListOnGame[] // Relacionamento com List
+}
+
+model List {
+  id         Int          @id @default(autoincrement())
+  name       String
+  isFavorite Boolean      @default(false)
+  isPriority Boolean      @default(false)
+  userId     Int
+  user       User         @relation(fields: [userId], references: [id])
+  games      ListOnGame[] // Relacionamento com Game
+
+  @@index([userId], map: "List_userId_fkey")
+}
+
+model ListOnGame {
+  id     Int  @id @default(autoincrement())
+  listId Int
+  gameId Int
+  list   List @relation(fields: [listId], references: [id])
+  game   Game @relation(fields: [gameId], references: [id])
+
+  @@unique([listId, gameId])
+}
