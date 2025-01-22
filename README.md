@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # NextGame
 
 Seu Catálogo de Jogos e Progresso
@@ -20,3 +21,7 @@ Este é um projeto de API desenvolvido em NestJS para gerenciamento de listas de
 - Listas personalizadas para "Jogos que Já Joguei" e "Jogos que Quero Jogar".
 - Funcionalidade para adicionar ou remover jogos de cada lista.
 - Marcação de jogos como “favoritos” ou “prioritários” para destaque.
+=======
+# next-game
+Seu Catálogo de Jogos e Progresso
+>>>>>>> 735ca3aa5d3cfa8d9b810517dc7794a0a206071a
