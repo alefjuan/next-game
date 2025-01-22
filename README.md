@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # NextGame
 
 Seu Catálogo de Jogos e Progresso
