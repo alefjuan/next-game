@@ -23,7 +23,6 @@ Este é um projeto de API desenvolvido em NestJS para gerenciamento de listas de
 
 # Aplicação contém
 
-- Documentação no Swagger
 - Segurança de rotas
 - Banco de dados persistente com Railway
 - Retorno claro
